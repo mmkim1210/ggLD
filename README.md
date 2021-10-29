@@ -1,5 +1,5 @@
 # ggLD
-R package to visualize a correlation matrix (e.g. LD matrix) using ggplot2 and the diagnoal on the x-axis
+An R package to visualize a correlation matrix (e.g. LD matrix) using ggplot2 and the diagonal on the x-axis. The package as it is can visualize more than 1,000 features (e.g. SNPs) fast. 
 
 ## Installation
 ```r
