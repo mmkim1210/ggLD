@@ -19,7 +19,7 @@ ggLD <- function(data){
     dplyr::mutate(idx1 = c(1:nrow(data))) %>%
     tidyr::pivot_longer(!.data$idx1, names_to = "idx2", values_to = "LD") %>%
     dplyr::mutate(dplyr::across(idx2, as.double)) %>%
-    dplyr::filter(!duplicated(paste0(pmax(.data$idx1, .data$idx2), pmin(.data$idx1, .data$idx2)))) %>%
+    dplyr::filter(!duplicated(paste(pmax(.data$idx1, .data$idx2), pmin(.data$idx1, .data$idx2), sep = "_"))) %>%
     tidyr::unite("id", .data$idx1:.data$idx2, remove = FALSE) %>%
     dplyr::mutate(diff = abs(idx2 - idx1))
 
