@@ -13,10 +13,19 @@ library(tidyverse)
 library(ggLD)
 
 # ggplot2
-ggLD(data = abs(cor(data.frame(a = rnorm(20), 
-                               b = rnorm(20), 
-                               c = rnorm(20),
-                               d = rnorm(20),
-                               e = rnorm(20)))))
+df <- abs(cor(data.frame(a = rnorm(20), 
+                         b = rnorm(20), 
+                         c = rnorm(20),
+                         d = rnorm(20),
+                         e = rnorm(20))))
+ggLD(data = df)
 ```
 <img src="man/figures/README-example-1.png" width="40%" />
+
+```r
+# Visualize with the right aspect ratio
+n <- dim(df)[1]
+ggLD(data = df) + 
+    theme(legend.position = "none") + 
+    theme(aspect.ratio = (1 / n  + (n - 1) / (2 * n)))
+```
