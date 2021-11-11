@@ -23,9 +23,13 @@ ggLD(data = df)
 <img src="man/figures/README-example-1.png" width="40%" />
 
 ```r
-# Visualize with the right aspect ratio
+# Visualize with the right (square) aspect ratio
 n <- dim(df)[1]
 ggLD(data = df) + 
     theme(legend.position = "none") + 
     theme(aspect.ratio = (1 / n  + (n - 1) / (2 * n)))
 ```
+
+
+The following is a real example of SNP data from chromosome 7 for ~3,000 SNPs. 
+<img src="man/figures/README-example-2.png" width="85%" />
